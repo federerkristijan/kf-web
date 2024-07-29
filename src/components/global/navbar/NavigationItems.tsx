@@ -1,4 +1,4 @@
-import { NavbarProps } from '@/types'
+import { NavbarProps } from '@/types/global';
 import Link from 'next/link';
 import { FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
 
