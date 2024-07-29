@@ -4,21 +4,10 @@ import {client} from './sanity.client'
 
 export const token = process.env.SANITY_API_READ_TOKEN
 
-export async function sanityFetch<QueryResponse>({
-  draftMode,
-  query,
-  params = {},
-}: {
-  draftMode: boolean
-  query: string
-  params?: QueryParams
-}) {
-  if (draftMode && !token) {
-    throw new Error('The `SANITY_API_READ_TOKEN` environment variable is required.')
-  }
-
-  return client.fetch<QueryResponse>(query, params, {
-    token,
-    perspective: draftMode ? 'previewDrafts' : 'published',
-  })
-}
+export const sanityFetch = async (query: string, token?: string) => {
+  const fetchClient = token
+    ? client.withConfig({ token })
+    : client;
+  const data = await fetchClient.fetch(query);
+  return data;
+};

@@ -1,4 +1,4 @@
-import { ProjectsSectionPayload } from "@/types";
+import { ProjectsSectionPayload } from "@/types/global";
 import Image from "next/image";
 import Livepad from "@/assets/Livepad.png";
 import Inklusion from "@/assets/Inklusion.png";

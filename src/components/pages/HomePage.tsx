@@ -1,14 +1,8 @@
 import React from "react";
-import { HomePageProps } from "@/types/global";
+
 import { HeroSection } from "./HeroSection";
-import { groq } from "next-sanity";
 
-export const homePageQuery = groq`
-  *[_type == "homePage"] {
-  }
-`;
-
-export function HomePage({ page, sections, preview }: HomePageProps) {
+export function HomePage({ sections }: { sections: any }) {
   const { hero } = sections ?? {};
 
   return (
