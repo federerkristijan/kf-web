@@ -111,6 +111,20 @@ Homepage {
   max-height: 100%!important;
 }
 
+.hero-section {
+  display: flex;
+  flex-direction: row;
+  width: max-content;
+}
+
+.moustache {
+  animation: moustache 1s infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
 .about-pic {
   width: 18rem!important;
   height: 20rem!important;

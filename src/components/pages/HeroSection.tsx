@@ -49,9 +49,9 @@ export const HeroSection = ({ title, subtitle, image }: HeroSectionPayload) => {
     const name3 = "erer";
 
     return (
-      <div className="flex flex-row">
+      <div className="hero-section">
         <h1>{name1}</h1>
-        <div className="">
+        <div className="moustache">
           <motion.div
             animate={{ rotate: [rotation, 0, rotation] }}
             transition={{
@@ -63,7 +63,9 @@ export const HeroSection = ({ title, subtitle, image }: HeroSectionPayload) => {
             <Image
               src={Moustache}
               alt="animation"
-              className="absolute top-0 left-3 right-0 bottom-0 m-auto w-14 h-auto"
+              className="moustache-animation absolute top-0 left-3 right-0 bottom-0 m-auto w-[1px] h-auto"
+              width={55}
+              height={24}
             />
           </motion.div>
           <h1 className="">{name2}</h1>
