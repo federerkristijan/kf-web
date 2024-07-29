@@ -1,4 +1,4 @@
-import { AboutPagePayload } from "@/types";
+import { AboutPagePayload } from "@/types/global";
 import Image from "next/image";
 import Foto from "@/assets/CV Foto Glasses 1 - Edited 1.png";
 import { aboutVars, quote } from "@/utils/variables";

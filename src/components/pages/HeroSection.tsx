@@ -1,4 +1,6 @@
-import { HeroSectionPayload } from "@/types";
+'use client';
+
+import { HeroSectionPayload } from "@/types/global";
 import Image from "next/image";
 import Foto from "@/assets/CV Foto Glasses 1 - Edited 1.png";
 import { Button } from "../ui/Button";
@@ -46,10 +48,8 @@ export const HeroSection = ({ title, subtitle, image }: HeroSectionPayload) => {
 
     const name3 = "erer";
 
-    const fullName = name1 + name2 + name3;
-
     return (
-      <div className="inline-flex">
+      <div className="flex flex-row">
         <h1>{name1}</h1>
         <div className="">
           <motion.div
@@ -74,9 +74,9 @@ export const HeroSection = ({ title, subtitle, image }: HeroSectionPayload) => {
   };
 
   return (
-    <div className="flex justify-between px-6 w-full min-h-full">
+    <div className="flex flex-col justify-between px-6 w-full min-h-full">
       <div className="p-20 relative">
-        <div className="heading-moustache flex-col relative">
+        <div className="heading-moustache">
           <h1 className="text-7xl py-4">{headerName()}</h1>
         </div>
         <h2 className="text-5xl py-4">{subtitle}</h2>
