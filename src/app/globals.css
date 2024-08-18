@@ -117,12 +117,29 @@ Homepage {
   width: max-content;
 }
 
+.hero-section h1 {
+  display: inline-flex;
+  align-items: center;
+}
+
+.hero-section h1 .relative.inline-block {
+  position: relative;
+  display: inline-block;
+}
+
 .moustache {
   animation: moustache 1s infinite;
   display: flex;
   justify-content: center;
   align-items: center;
 
+}
+
+.moustache-animation {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .about-pic {
