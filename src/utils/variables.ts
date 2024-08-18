@@ -1,4 +1,4 @@
-import { Project, Skill } from "@/types";
+import { Project, Skill } from "@/types/global";
 // import { DiDigitalOcean, DiDjango, DiGithub, DiJavascript, DiMysql, DiNodejs, DiPython, DiReact, DiScrum } from "react-icons/di";
 // import { SiTypescript, SiFigma, SiVercel } from "react-icons/si";
 import Livepad from "@/assets/Livepad.png";

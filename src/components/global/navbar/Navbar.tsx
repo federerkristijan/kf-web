@@ -1,6 +1,10 @@
 'use client';
 
+<<<<<<< HEAD
 import { NavbarProps } from "@/types";
+=======
+import { NavbarProps } from "@/types/global";
+>>>>>>> 1f7c73fc3df59675f56dbf9888f089c3a6e3df9e
 import { useState } from "react";
 import Logo from "../../ui/Logo";
 import NavigationItems from "./NavigationItems";
@@ -10,16 +14,13 @@ export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <div className="px-6 py-1 transition-all xl:px-8 xl:shadow-lg xl:bg-background border-b">
       <nav
-        className="navbar z-0 flex items-center justify-between border-white"
-        aria-label="Global"
+        className="flex flex-row z-0 items-center justify-between border-white"
       >
-        <div className="border-red-200 ">
+        <div>
           <Logo setMobileMenuOpen={setMobileMenuOpen} />
         </div>
         <NavigationItems menuItems={menuItems}/>
       </nav>
-    </div>
   );
 }

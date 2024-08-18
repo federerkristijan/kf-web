@@ -1,4 +1,4 @@
-import { ProjectsPagePayload } from "@/types";
+import { ProjectsPagePayload } from "@/types/global";
 import Image from "next/image";
 import { projectsVars } from "@/utils/variables";
 import { IconType } from "react-icons";

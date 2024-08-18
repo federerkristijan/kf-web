@@ -1,10 +1,19 @@
 import {LiveQuery} from 'next-sanity/preview/live-query'
 import {sanityFetch, token} from '../lib/sanity.fetch'
-import {HomePage, homePageQuery } from '@/components/pages/HomePage'
+import {HomePage } from '@/components/pages/HomePage'
+import {homePageQuery} from '@/lib/sanity.queries'
 
-export default function Home({draftMode, data}: {draftMode: boolean, data: any}) {
+async function getData() {
+  const data = await sanityFetch(homePageQuery, token);
+  return data;
+}
+
+
+export default async function Page() {
+  const data = await getData();
+
   return (
-    <LiveQuery enabled={draftMode} query={homePageQuery} initialData={data}>
+    <LiveQuery enabled={!!token} query={homePageQuery} initialData={data}>
       <HomePage sections={{ hero: data?.heroSection }} />
     </LiveQuery>
   );
