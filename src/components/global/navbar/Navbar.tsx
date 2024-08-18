@@ -1,3 +1,5 @@
+'use client';
+
 import { NavbarProps } from "@/types";
 import { useState } from "react";
 import Logo from "../../ui/Logo";
