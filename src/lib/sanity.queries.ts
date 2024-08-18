@@ -5,7 +5,6 @@ export const homePageQuery = groq`
     _id,
     heroSection
     }
-  }
 `;
 
 export const aboutPageQuery = groq`
@@ -17,7 +16,6 @@ export const aboutPageQuery = groq`
     skills,
     quote,
     }
-  }
 `;
 
 export const projectsQuery = groq`
@@ -31,5 +29,4 @@ export const projectsQuery = groq`
     link,
     tags,
     }
-  }
 `;

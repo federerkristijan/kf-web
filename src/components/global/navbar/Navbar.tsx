@@ -1,8 +1,8 @@
 'use client';
 
-import { NavbarProps } from "@/types/global";
+// import { NavbarProps } from "@/types";
 import { useState } from "react";
-import Logo from "../../ui/Logo";
+import Logo from "@/components/ui/Logo";
 import NavigationItems from "./NavigationItems";
 import { menuItems } from "./menuItems";
 
