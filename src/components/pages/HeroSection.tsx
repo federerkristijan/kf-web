@@ -83,23 +83,19 @@ export const HeroSection = ({ title, subtitle, image }: HeroSectionPayload) => {
           I write clean code to create quality applications with intuitive user
           experience.
         </span>
-        <div className="flex gap-8 py-12">
-          <Link href="/about">
+        <div className="buttons">
             <Button
               className="bg-[#9B51E0] rounded-3xl text-white px-6 py-3 shadow-btn-primary w-full"
-              onClick={() => console.log("/about")}
+              href="/about"
             >
               Discover a talent
             </Button>
-          </Link>
-          <Link href="/projects">
             <Button
-              className="border-2 border-[#9B51E0] rounded-3xl text-white px-6 py-3 shadow-btn-primary w-full"
-              onClick={() => console.log("/projects")}
+              className="button2 border-[#9B51E0] rounded-3xl text-white px-6 py-3 shadow-btn-primary w-full"
+              href="/projects"
             >
               See projects
             </Button>
-          </Link>
         </div>
       </div>
       <div className="px-10 py-20">
