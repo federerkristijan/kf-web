@@ -12,9 +12,15 @@ body,
 
 body {
   -webkit-font-smoothing: antialiased;
-  margin-left: 3rem;
-  margin-right: 3rem;
-  background-color: black;
+  margin: 0;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0.95) 12%,
+    rgba(0, 0, 0, 0.95) 92%,
+    rgba(0, 0, 0, 0.9) 98%
+  );
   color: white;
 }
 
@@ -25,7 +31,7 @@ html {
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 4rem;
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: 0.25rem;
@@ -99,12 +105,17 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 0;
+  background-color: black;
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .nav-icons {
   display: flex;
   gap: 2rem;
-  font-size: 1rem;
+  font-size: 1.3rem;
+  padding-right: 3rem;
 }
 
 Homepage {
@@ -114,7 +125,9 @@ Homepage {
 .hero-section {
   display: flex;
   flex-direction: row;
-  width: max-content;
+  width: 100%;
+  justify-content: space-around;
+  margin-top: 4rem;
 }
 
 .hero-section h1 {
@@ -154,17 +167,16 @@ Homepage {
 }
 
 button {
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
   background-color: #9b51e0 !important;
   color: white;
   font-weight: 600;
+  font-size: 1rem;
   cursor: pointer;
-  padding: 0.5rem 1rem;
-  border-radius: 1rem;
+  padding: 1rem 2rem;
+  border-radius: 58px;
 }
 
 .button2 {
-  border: 2px solid white;
+  border: 1px solid white;
   background-color: black !important;
 }

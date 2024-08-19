@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { HeroSectionPayload } from "@/types/global";
 import Image from "next/image";
@@ -43,7 +43,7 @@ export const HeroSection = ({ title, subtitle, image }: HeroSectionPayload) => {
     const name3 = "erer";
 
     return (
-      <div className="hero-section flex items-center">
+      <div className="hero-section flex items-start">
         <h1 className="inline-flex">
           {name1}
           <div className="flex ">
@@ -73,33 +73,40 @@ export const HeroSection = ({ title, subtitle, image }: HeroSectionPayload) => {
   };
 
   return (
-    <div className="flex flex-col justify-between px-6 w-full min-h-full">
-      <div className="p-20 relative">
-        <div className="heading-moustache">
-          <h1 className="text-7xl py-4">{renderHeaderName()}</h1>
+    <div className="hero-section min-h-full">
+      <div className="flex flex-col relative">
+        <div className="heading-moustache ">
+          <h1 className="text-9xl py-4 ">{renderHeaderName()}</h1>
         </div>
-        <h2 className="text-5xl py-4">{subtitle}</h2>
-        <span className="text-3xl py-4">
-          I write clean code to create quality applications with intuitive user
-          experience.
-        </span>
+        <div className="pl-[2rem]">
+          <h2 className="text-5xl py-4">{subtitle}</h2>
+          <span className="sub-header text-3xl py-4">
+            I write clean code to create quality applications with intuitive
+            user experience.
+          </span>
+        </div>
         <div className="buttons">
-            <Button
-              className="bg-[#9B51E0] rounded-3xl text-white px-6 py-3 shadow-btn-primary w-full"
-              href="/about"
-            >
-              Discover a talent
-            </Button>
-            <Button
-              className="button2 border-[#9B51E0] rounded-3xl text-white px-6 py-3 shadow-btn-primary w-full"
-              href="/projects"
-            >
-              See projects
-            </Button>
+          <Button
+            href="/about"
+          >
+            Discover a talent
+          </Button>
+          <Button
+            className="button2"
+            href="/projects"
+          >
+            See projects
+          </Button>
         </div>
       </div>
-      <div className="px-10 py-20">
-        <Image src={Foto} alt="foto" width={600} height={600} className="rounded-xl" />
+      <div className="foto px-10 py-20">
+        <Image
+          src={Foto}
+          alt="foto"
+          width={550}
+          height={600}
+          className="rounded-xl"
+        />
       </div>
     </div>
   );
