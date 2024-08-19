@@ -114,7 +114,9 @@ Homepage {
 .hero-section {
   display: flex;
   flex-direction: row;
-  width: max-content;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 4rem;
 }
 
 .hero-section h1 {

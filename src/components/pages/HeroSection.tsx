@@ -73,13 +73,13 @@ export const HeroSection = ({ title, subtitle, image }: HeroSectionPayload) => {
   };
 
   return (
-    <div className="flex flex-col justify-between px-6 w-full min-h-full">
-      <div className="p-20 relative">
+    <div className="hero-section px-6 min-h-full">
+      <div className="flex flex-col p-20 relative">
         <div className="heading-moustache">
           <h1 className="text-7xl py-4">{renderHeaderName()}</h1>
         </div>
         <h2 className="text-5xl py-4">{subtitle}</h2>
-        <span className="text-3xl py-4">
+        <span className="sub-header text-3xl py-4">
           I write clean code to create quality applications with intuitive user
           experience.
         </span>
@@ -98,8 +98,8 @@ export const HeroSection = ({ title, subtitle, image }: HeroSectionPayload) => {
             </Button>
         </div>
       </div>
-      <div className="px-10 py-20">
-        <Image src={Foto} alt="foto" width={600} height={600} className="rounded-xl" />
+      <div className="foto px-10 py-20">
+        <Image src={Foto} alt="foto" width={450} height={450} className="rounded-xl" />
       </div>
     </div>
   );
