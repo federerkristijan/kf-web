@@ -12,9 +12,15 @@ body,
 
 body {
   -webkit-font-smoothing: antialiased;
-  margin-left: 3rem;
-  margin-right: 3rem;
-  background-color: black;
+  margin: 0;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0.95) 12%,
+    rgba(0, 0, 0, 0.95) 92%,
+    rgba(0, 0, 0, 0.9) 98%
+  );
   color: white;
 }
 
@@ -99,6 +105,10 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 0;
+  background-color: black;
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .nav-icons {
@@ -117,6 +127,7 @@ Homepage {
   width: 100%;
   justify-content: space-between;
   margin-top: 4rem;
+  padding-left: 2rem;
 }
 
 .hero-section h1 {
