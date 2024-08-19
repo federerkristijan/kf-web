@@ -73,10 +73,10 @@ export const HeroSection = ({ title, subtitle, image }: HeroSectionPayload) => {
   };
 
   return (
-    <div className="hero-section pl-6 min-h-full">
+    <div className="hero-section min-h-full">
       <div className="flex flex-col relative">
-        <div className="heading-moustache">
-          <h1 className="text-7xl py-4">{renderHeaderName()}</h1>
+        <div className="heading-moustache ">
+          <h1 className="text-9xl py-4 ">{renderHeaderName()}</h1>
         </div>
         <div className="pl-[2rem]">
           <h2 className="text-5xl py-4">{subtitle}</h2>
@@ -87,13 +87,12 @@ export const HeroSection = ({ title, subtitle, image }: HeroSectionPayload) => {
         </div>
         <div className="buttons">
           <Button
-            className="bg-[#9B51E0] rounded-3xl text-white px-6 py-3 shadow-btn-primary w-full"
             href="/about"
           >
             Discover a talent
           </Button>
           <Button
-            className="button2 border-[#9B51E0] rounded-3xl text-white px-6 py-3 shadow-btn-primary w-full"
+            className="button2"
             href="/projects"
           >
             See projects
@@ -104,8 +103,8 @@ export const HeroSection = ({ title, subtitle, image }: HeroSectionPayload) => {
         <Image
           src={Foto}
           alt="foto"
-          width={450}
-          height={450}
+          width={550}
+          height={600}
           className="rounded-xl"
         />
       </div>
