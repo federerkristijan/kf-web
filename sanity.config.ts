@@ -1,4 +1,4 @@
-import { deskTool } from "sanity/desk"
+import {structureTool} from 'sanity/structure'
 
 export const config = {
   projectId: "vexsitdq",
@@ -10,4 +10,5 @@ export const config = {
   schemas: {
     types: [],
   },
+  plugins: [structureTool()],
 }
