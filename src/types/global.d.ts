@@ -4,7 +4,7 @@ import { StaticImageData } from "next/image";
 
 export interface AboutPagePayload {
   title: string;
-  subtitle: string;
+  description: string;
   image?: StaticImageData;
   skills?: Skill[];
 }
@@ -37,8 +37,8 @@ export interface HomePageProps {
 export interface AboutPageProps {
   title: string;
   description: string;
-  image: ReactElement;
-  skills: never[];
+  image: StaticImageData;
+  skills: Skilll[];
   page: AboutPagePayload;
 }
 
