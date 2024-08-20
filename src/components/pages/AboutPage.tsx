@@ -5,9 +5,9 @@ import { aboutVars, quote } from "@/utils/variables";
 
 export default function AboutPage({ image, skills }: AboutPagePayload) {
   return (
-    <div className="about bg-[#ffffff] h-full p-10 text-black">
-      <h1 className="py-4">{aboutVars.title}</h1>
+    <div className="about bg-[#ffffff] h-full text-black">
       <div className="flex">
+      <h1 className="about-title">{aboutVars.title}</h1>
         {image && (
           <Image
             src={Foto}
@@ -16,19 +16,19 @@ export default function AboutPage({ image, skills }: AboutPagePayload) {
           />
         )}
         <div className="py-3 px-6 max-w-[80%]">
-          <h2 className="font-normal">{aboutVars.description}</h2>
+          <h4 className="about-description">{aboutVars.description}</h4>
           <div className="skills-wrapper flex h-auto pt-6 gap-4 flex-wrap">
             {skills &&
               skills.map((skill, index) => (
                 <span
                   key={index}
-                  className="text-l border-2 border-slate-400 w-fit py-1.5 px-3 rounded-xl shadow-lg bg-white text-black"
+                  className="skill"
                 >
                   {skill.title}
                 </span>
               ))}
           </div>
-          <h2 className="text-center pt-16 px-32 leading-loose">
+          <h2 className="about-quote">
             {'"' + quote + '"'}
           </h2>
         </div>
