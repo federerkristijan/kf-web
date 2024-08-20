@@ -119,8 +119,13 @@ nav {
 }
 
 Homepage {
-  max-height: 100% !important;
+  /* max-height: 100% !important; */
 }
+
+/* .about {
+  background-color: #ffffff;
+  color: black;
+} */
 
 .hero-section {
   display: flex;

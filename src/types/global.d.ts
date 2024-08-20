@@ -39,7 +39,7 @@ export interface AboutPageProps {
   description: string;
   image: StaticImageData;
   skills: Skilll[];
-  page: AboutPagePayload;
+  // page: AboutPagePayload;
 }
 
 export interface LayoutProps {
