@@ -1,9 +1,5 @@
 import { ProjectsSectionPayload } from "@/types/global";
 import Image from "next/image";
-import { DiNodejs, DiDigitalOcean, DiDocker, DiGithub, DiMysql } from "react-icons/di";
-import { SiPrisma, SiTailwindcss, SiTypescript, SiVercel } from "react-icons/si";
-import { TbBrandNextjs } from "react-icons/tb";
-import { FaFigma, FaNodeJs } from "react-icons/fa6";
 import { projectsVars } from "@/utils/variables";
 import { IconType } from "react-icons";
 import Link from "next/link";
@@ -25,12 +21,6 @@ const ProjectsSection = ({ title, subtitle, image }: ProjectsSectionPayload) => 
                   target="_blank"
                   rel="noreferrer"
                   className="project-image py-1 px-2  w-full h-full rounded-xl bg-black "
-                  // style={{
-                  //   backgroundImage: `url(${project.image})`,
-                  //   backgroundSize: "contain",
-                  //   backgroundPosition: "center",
-                  //   backgroundRepeat: "no-repeat",
-                  // }}
                 >
                   <Image
                     src={project.image}
@@ -42,8 +32,8 @@ const ProjectsSection = ({ title, subtitle, image }: ProjectsSectionPayload) => 
                 </Link>
                 <p className="project-description">{project.description}</p>
                 <div className="project-icons flex gap-3 text-xl pl-20">
-                  {project.icons.map((Icon: IconType) => (
-                    <Icon key={index} />
+                  {project.icons.map((Icon: IconType, iconIndex) => (
+                    <Icon key={iconIndex} />
                   ))}
                 </div>
               </div>
