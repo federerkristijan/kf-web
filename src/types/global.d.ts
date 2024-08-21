@@ -94,6 +94,7 @@ export interface ProjectsPagePayload {
 export interface ProjectsSectionPayload {
   title: string;
   subtitle: string;
+  projects: Project[]; 
   image?: typeof Image;
   icons: IconType[];
 }
