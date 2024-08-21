@@ -83,7 +83,7 @@ export const projectsVars: Project[] = [
     description:
       'An interactive and responsive web app that geolocates all schools, kindergartens, and playgrounds in Germany, allowing users to compare their location with nearby educational institutions and recreational areas. The tech stack includes Next.js 14, TypeScript, TailwindCSS, OpenStreetMaps, and Google Analytics.',
     image: CannaSmokeHere.src,
-    url: 'https://www.livepad.org/',
+    url: 'https://www.cannasmokehere.de/',
     icons: [TbBrandNextjs, SiTailwindcss, SiTypescript, SiVercel,FaFigma, DiGithub, SiOpenstreetmap, SiGoogleanalytics]
   },
   {
