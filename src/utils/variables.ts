@@ -13,6 +13,7 @@ import { SiGoogleanalytics } from "react-icons/si";
 import { FaMailchimp } from "react-icons/fa";
 import { FaWix } from "react-icons/fa";
 import { FaCss3 } from "react-icons/fa";
+import { SiOpenstreetmap } from "react-icons/si";
 
 export const aboutVars = {
   title: 'About',
@@ -83,7 +84,7 @@ export const projectsVars: Project[] = [
       'Interactive and Responsive Web SPA with Next.js 14, TailwindCSS, OpenStreetMaps and Google Analytics',
     image: CannaSmokeHere.src,
     url: 'https://www.livepad.org/',
-    icons: [FaNodeJs, TbBrandNextjs, SiTailwindcss, SiTypescript, DiDigitalOcean, SiVercel, DiDocker, FaFigma, DiGithub, SiPrisma, SiGoogleanalytics]
+    icons: [TbBrandNextjs, SiTailwindcss, SiTypescript, SiVercel,FaFigma, DiGithub, SiOpenstreetmap, SiGoogleanalytics]
   },
   {
     title: 'Livepad',

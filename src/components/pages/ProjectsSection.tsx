@@ -40,8 +40,8 @@ const ProjectsSection = ({ title, subtitle, image }: ProjectsSectionPayload) => 
                     className="project-image rounded-xl w-[910%] h-[100%]"
                   />
                 </Link>
-                <p className="">{project.description}</p>
-                <div className="project-description flex gap-3 text-xl pl-20">
+                <p className="project-description">{project.description}</p>
+                <div className="project-icons flex gap-3 text-xl pl-20">
                   {project.icons.map((Icon: IconType) => (
                     <Icon key={index} />
                   ))}
