@@ -1,13 +1,19 @@
 import { Project, Skill } from "@/types/global";
-// import { DiDigitalOcean, DiDjango, DiGithub, DiJavascript, DiMysql, DiNodejs, DiPython, DiReact, DiScrum } from "react-icons/di";
-// import { SiTypescript, SiFigma, SiVercel } from "react-icons/si";
 import Livepad from "@/assets/Livepad.png";
 import Inklusion from "@/assets/Inklusion.png";
 import DasaHink from "@/assets/DasaHink.png";
+import CannaSmokeHere from "@/assets/CannaSmokeHere.png";
 import { DiNodejs, DiDigitalOcean, DiDocker, DiGithub, DiMysql } from "react-icons/di";
 import { SiPrisma, SiTailwindcss, SiTypescript, SiVercel } from "react-icons/si";
+import { SiSanity } from "react-icons/si";
+import { FaReact } from "react-icons/fa";
 import { TbBrandNextjs } from "react-icons/tb";
 import { FaFigma, FaNodeJs } from "react-icons/fa6";
+import { SiGoogleanalytics } from "react-icons/si";
+import { FaMailchimp } from "react-icons/fa";
+import { FaWix } from "react-icons/fa";
+import { FaCss3 } from "react-icons/fa";
+import { SiOpenstreetmap } from "react-icons/si";
 
 export const aboutVars = {
   title: 'About',
@@ -73,27 +79,35 @@ export const projectsTitles = {
 //  TODO: Add the project tech stack icons
 export const projectsVars: Project[] = [
   {
+    title: 'Canna Smoke Here',
+    description:
+      'Interactive and Responsive Web SPA with Next.js 14, TailwindCSS, OpenStreetMaps and Google Analytics',
+    image: CannaSmokeHere.src,
+    url: 'https://www.livepad.org/',
+    icons: [TbBrandNextjs, SiTailwindcss, SiTypescript, SiVercel,FaFigma, DiGithub, SiOpenstreetmap, SiGoogleanalytics]
+  },
+  {
     title: 'Livepad',
     description:
       'Product management for the agile team project. Integration and implemention of the user authentication for the existing website, as well as further developing the app with various Etherpad plugins. Tech stack: Node.js, Next.js, TailwindCSS, i18next, DigitalOcean, Vercel, Docker, Typescript, Sanity.io, Prisma, MySQL, Planetscale, Figma, and GitHub.',
     image: Livepad.src,
     url: 'https://www.livepad.org/',
-    icons: [FaNodeJs, TbBrandNextjs, SiTailwindcss, SiTypescript, DiDigitalOcean, SiVercel, DiDocker, FaFigma, DiGithub, SiPrisma, DiMysql]
+    icons: [FaNodeJs, TbBrandNextjs, SiTailwindcss, SiTypescript, DiNodejs, DiDigitalOcean, SiVercel, DiDocker, FaFigma, DiGithub, SiPrisma, DiMysql, SiSanity]
   },
   {
     title: 'Inklusion Bühnenreif',
     description:
-      'My personal portfolio built with Next.js, TailwindCSS and TypeScript.',
+      'Servicing, updating and managing a Wix Website. Administration of Meta Business Suite and the creation of social media content with a focus on accessibility, particularly alternative text.Creating educational materials for team members on the usage of web technologies',
     image: Inklusion.src,
     url: 'https://www.inklusion-buehnenreif.de/',
-    icons: []
+    icons: [ FaMailchimp, FaWix, FaCss3 ]
   },
   {
     title: 'Dasa Hink',
     description:
-      'My personal portfolio built with Next.js, TailwindCSS and TypeScript.',
+      'Development of Responsive Web SPA with React, Sanity.io, NoSQL, EmailJS (contact), Mailchimp (subscription), Google Analytics',
     image: DasaHink.src,
     url: 'https://www.dasahink.com/',
-    icons: []
+    icons: [FaReact, SiSanity, SiGoogleanalytics, FaMailchimp ]
   },
 ];
