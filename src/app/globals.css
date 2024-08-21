@@ -181,14 +181,14 @@ Homepage {
 
 .projects {
   display: flex;
-  width: 90vw;
+  width: 95vw;
   padding-top: 2rem;
-  padding-left: 2rem;
+  padding-left: 4vw;
 }
 
 .projects-grid {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  justify-content: center;
   gap: 3rem;
 }
 
@@ -202,13 +202,13 @@ Homepage {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* justify-content: start; */
+  justify-content: space-between;
   gap: 1rem;
   padding: 0.5rem;
   border-radius: 0.75rem;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
               0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  width: 80%;
+  width: 20%;
   height: 100%;
   background-color: #cbd5e1;
   border: 2px solid #94a3b8;
@@ -240,6 +240,7 @@ Homepage {
   display: flex;
   gap: 0.5rem;
   font-size: 1.2rem;
+  justify-content: end;
 }
 
 /* Projects - end */
