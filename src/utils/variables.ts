@@ -14,6 +14,7 @@ import { FaMailchimp } from "react-icons/fa";
 import { FaWix } from "react-icons/fa";
 import { FaCss3 } from "react-icons/fa";
 import { SiOpenstreetmap } from "react-icons/si";
+import { FaMeta } from "react-icons/fa6";
 
 export const aboutVars = {
   title: 'About',
@@ -76,12 +77,11 @@ export const projectsTitles = {
   subtitle: 'A collection of projects I have worked on',
 };
 
-//  TODO: Add the project tech stack icons
 export const projectsVars: Project[] = [
   {
     title: 'Canna Smoke Here',
     description:
-      'Interactive and Responsive Web SPA with Next.js 14, TailwindCSS, OpenStreetMaps and Google Analytics',
+      'An interactive and responsive web app that geolocates all schools, kindergartens, and playgrounds in Germany, allowing users to compare their location with nearby educational institutions and recreational areas. The tech stack includes Next.js 14, TypeScript, TailwindCSS, OpenStreetMaps, and Google Analytics.',
     image: CannaSmokeHere.src,
     url: 'https://www.livepad.org/',
     icons: [TbBrandNextjs, SiTailwindcss, SiTypescript, SiVercel,FaFigma, DiGithub, SiOpenstreetmap, SiGoogleanalytics]
@@ -89,7 +89,7 @@ export const projectsVars: Project[] = [
   {
     title: 'Livepad',
     description:
-      'Product management for the agile team project. Integration and implemention of the user authentication for the existing website, as well as further developing the app with various Etherpad plugins. Tech stack: Node.js, Next.js, TailwindCSS, i18next, DigitalOcean, Vercel, Docker, Typescript, Sanity.io, Prisma, MySQL, Planetscale, Figma, and GitHub.',
+      'Product management for the Agile team project involved integrating and implementing user authentication for the existing website, as well as further developing the app with various Etherpad plugins. The tech stack included Node.js, Next.js, TypeScript, TailwindCSS, i18next, DigitalOcean, Vercel, Docker, Sanity.io, Prisma, MySQL, Planetscale, Figma, and GitHub',
     image: Livepad.src,
     url: 'https://www.livepad.org/',
     icons: [FaNodeJs, TbBrandNextjs, SiTailwindcss, SiTypescript, DiNodejs, DiDigitalOcean, SiVercel, DiDocker, FaFigma, DiGithub, SiPrisma, DiMysql, SiSanity]
@@ -97,17 +97,17 @@ export const projectsVars: Project[] = [
   {
     title: 'Inklusion Bühnenreif',
     description:
-      'Servicing, updating and managing a Wix Website. Administration of Meta Business Suite and the creation of social media content with a focus on accessibility, particularly alternative text.Creating educational materials for team members on the usage of web technologies',
+      'Servicing, updating, and managing a Wix website. Administering the Meta Business Suite and creating social media content with a focus on accessibility, particularly through the use of alternative text. Developing educational materials for team members on web technologies and providing technical support.',
     image: Inklusion.src,
     url: 'https://www.inklusion-buehnenreif.de/',
-    icons: [ FaMailchimp, FaWix, FaCss3 ]
+    icons: [ FaMailchimp, FaWix, FaCss3, FaMeta ]
   },
-  {
-    title: 'Dasa Hink',
-    description:
-      'Development of Responsive Web SPA with React, Sanity.io, NoSQL, EmailJS (contact), Mailchimp (subscription), Google Analytics',
-    image: DasaHink.src,
-    url: 'https://www.dasahink.com/',
-    icons: [FaReact, SiSanity, SiGoogleanalytics, FaMailchimp ]
-  },
+  // {
+  //   title: 'Dasa Hink',
+  //   description:
+  //     'Development of Responsive Web SPA with React, Sanity.io, NoSQL, EmailJS (contact), Mailchimp (subscription), Google Analytics',
+  //   image: DasaHink.src,
+  //   url: 'https://www.dasahink.com/',
+  //   icons: [FaReact, SiSanity, SiGoogleanalytics, FaMailchimp ]
+  // },
 ];
