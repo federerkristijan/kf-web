@@ -24,9 +24,6 @@ export const aboutVars = {
 
 export const skills: Skill[] = [
   {
-    title: 'DigitalOcean',
-  },
-  {
     title: 'JavaScript',
   },
   {
@@ -39,7 +36,7 @@ export const skills: Skill[] = [
     title: 'React',
   },
   {
-    title: 'Mysql',
+    title: 'MySQL',
   },
   {
     title: 'Node.js',
@@ -63,11 +60,17 @@ export const skills: Skill[] = [
     title: 'Next.js'
   },
   {
+    title: 'Sanity.io'
+  },
+  {
     title: 'TailwindCSS'
   },
   {
     title: 'Prisma'
-  }
+  },
+  {
+    title: 'DigitalOcean',
+  },
 ];
 
 export const quote = "Failure is an opportunity to learn and thrive."
