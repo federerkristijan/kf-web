@@ -171,7 +171,6 @@ nav {
   align-items: center;
   background-color: #ffffff;
   color: black;
-  height: 100vh;
   padding: 2rem;
   box-sizing: border-box;
 }
@@ -334,9 +333,11 @@ button {
 /* Media Queries */
 @media (min-width: 768px) {
   .about-wrapper {
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     padding: 4rem;
+    width: 60%;
+    height: auto;
   }
 
   .about-pic {
