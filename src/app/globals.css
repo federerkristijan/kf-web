@@ -7,6 +7,8 @@ body,
 #__next {
   height: 100%;
   width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
   --scroll-behavior: smooth !important;
   scroll-behavior: smooth !important;
   margin: 0;
@@ -160,6 +162,38 @@ nav {
   transform: translateX(-50%);
 }
 
+.mobile-hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  overflow: hidden;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f8f8; /* Fallback background color */
+}
+
+.mobile-title {
+  font-size: 2rem;
+  color: #333;
+  z-index: 2;
+  position: relative;
+  font-weight: bold;
+  padding: 0 1rem;
+}
+
+.mobile-background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  opacity: 0.5;
+}
+
 /* Hero - end */
 
 /* About - start */
@@ -171,76 +205,71 @@ nav {
   align-items: center;
   background-color: #ffffff;
   color: black;
-  height: 100vh;
-  padding: 2rem;
+  padding: 1rem;
   box-sizing: border-box;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .about-title {
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin-bottom: 1rem;
   text-align: center;
 }
 
 .about-description {
-  display: flex;
-  justify-content: center;
   font-weight: 400;
-  min-width: 50%;
-  width: 80%;
-  padding-bottom: 7rem;
+  width: 100%;
+  max-width: 100%;
+  padding-bottom: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
 }
 
 .about-pic {
-  width: 18rem !important;
-  height: 20rem !important;
-  border-radius: 50% !important;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
 }
 
 .about-quote {
   text-align: center;
-  padding-top: 4rem;
-  line-height: 2;
+  padding-top: 1rem;
+  line-height: 1.5;
+  font-style: italic;
+  max-width: 100%;
+  margin: 0 auto;
+  font-size: 0.9rem;
 }
 
 .about-skills-wrapper {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  flex-direction: row;
-  gap: 1rem;
-  width: 70%;
+  gap: 0.5rem;
+  width: 100%;
+  padding-top: 1rem;
 }
 
 .about-skill {
-  font-size: 1.125rem;
-  display: flex;
-  flex-direction: row;
-  gap: 3rem;
-  border-width: 1px solid;
-  border-color: #94a3b8;
-  width: fit-content;
-  padding-top: 0.375rem;
-  padding-bottom: 0.375rem;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-  border-radius: 0.75rem;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  font-size: 0.8rem;
+  border: 1px solid #94a3b8;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.5rem;
   background-color: black;
   color: white;
-  flex-wrap: wrap;
 }
-
-/* About - end */
 
 /* Projects - start */
 
 .projects {
   display: flex;
-  width: 95vw;
+  width: 100%;
   padding-top: 2rem;
-  padding-left: 4vw;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  box-sizing: border-box;
 }
 
 .projects-grid {
@@ -331,53 +360,181 @@ button {
   background-color: black !important;
 }
 
+/* Mobile Projects Carousel */
+.mobile-projects-section {
+  padding: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.carousel-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.carousel-button.prev {
+  left: 0;
+}
+
+.carousel-button.next {
+  right: 0;
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ccc;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: #333;
+}
+
+.project-image-container {
+  width: 100%;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.75rem;
+}
+
+.project-image {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
 /* Media Queries */
-@media (min-width: 768px) {
+@media (min-width: 640px) {
   .about-wrapper {
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 4rem;
+    padding: 2rem;
+  }
+
+  .about-title {
+    font-size: 2rem;
+  }
+
+  .about-description {
+    font-size: 1rem;
+    max-width: 90%;
+  }
+
+  .about-pic {
+    width: 180px;
+    height: 180px;
+  }
+
+  .about-quote {
+    font-size: 1rem;
+    max-width: 90%;
+  }
+
+  .about-skill {
+    font-size: 0.9rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .about-description {
+    max-width: 80%;
+  }
+
+  .about-quote {
+    max-width: 80%;
   }
 
   .about-pic {
     width: 200px;
     height: 200px;
   }
-
-  .about-description {
-    font-size: 1.125rem;
-    text-align: left;
-    max-width: 60%;
-  }
-
-  .projects-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .project-card {
-    max-width: 45%;
-  }
-
-  .contact-section {
-    padding: 3rem 2rem;
-  }
 }
 
 @media (min-width: 1024px) {
+  .about-wrapper {
+    padding: 4rem;
+  }
+
   .about-title {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 
   .about-description {
-    font-size: 1.25rem;
-    max-width: 50%;
+    font-size: 1.1rem;
+    max-width: 70%;
   }
 
-  .projects-grid {
-    grid-template-columns: repeat(3, 1fr);
+  .about-quote {
+    font-size: 1.1rem;
+    max-width: 70%;
+  }
+
+  .about-skill {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-title {
+    font-size: 1.5rem;
+  }
+
+  .about-description {
+    font-size: 0.9rem;
+  }
+
+  .about-skill {
+    font-size: 0.8rem;
+  }
+
+  .about-quote {
+    font-size: 0.9rem;
+  }
+
+  .projects {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
   }
 
   .project-card {
-    max-width: 30%;
+    width: 100%;
+  }
+
+  .project-image {
+    width: 100%;
+    height: auto;
+  }
+
+  .project-description {
+    font-size: 1rem;
+    padding-left: 0.5rem;
+  }
+
+  .project-icons {
+    justify-content: center;
+    padding: 0.5rem;
   }
 }

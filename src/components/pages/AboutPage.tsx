@@ -5,17 +5,19 @@ import { aboutVars, quote } from "@/utils/variables";
 
 export default function AboutPage({ image, skills }: AboutPagePayload) {
   return (
-    <div className="about-wrapper bg-[#ffffff] h-full text-black">
+    <div className="about-wrapper">
       <h1 className="about-title">{aboutVars.title}</h1>
       {image && (
         <Image
           src={Foto}
           alt="foto"
-          className="about-pic rounded-full bg-slate-300 border-gray-300 border-2 my-8 mr-2"
+          width={150}
+          height={150}
+          className="about-pic"
         />
       )}
-      <h4 className="about-description">{aboutVars.description}</h4>
-      <div className="about-skills-wrapper flex h-auto pt-6 gap-4 flex-wrap">
+      <p className="about-description">{aboutVars.description}</p>
+      <div className="about-skills-wrapper">
         {skills &&
           skills.map((skill, index) => (
             <span key={index} className="about-skill">
@@ -23,7 +25,7 @@ export default function AboutPage({ image, skills }: AboutPagePayload) {
             </span>
           ))}
       </div>
-      <h2 className="about-quote">{'"' + quote + '"'}</h2>
+      <p className="about-quote">{'"' + quote + '"'}</p>
     </div>
   );
 }

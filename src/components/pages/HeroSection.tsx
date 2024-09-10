@@ -8,34 +8,41 @@ import Moustache from "@/assets/moustache.png";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useMoustacheRotation } from "@/utils/moustache";
+import { MobileHeroSection } from "./MobileHeroSection";
 
 export const HeroSection = ({ title, subtitle, image }: HeroSectionPayload) => {
-  const [rotation, setRotation] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+  const rotation = useMoustacheRotation();
 
   useEffect(() => {
-    const intervalId = setInterval(() => {
-      // Rotate left and right slowly
-      setRotation((prevRotation) => (prevRotation >= 0 ? -5 : 5));
-    }, 3000);
-
-    const pauseIntervalId = setInterval(() => {
-      clearInterval(intervalId);
-      setTimeout(() => {
-        const newIntervalId = setInterval(() => {
-          setRotation((prevRotation) => (prevRotation >= 0 ? -5 : 5));
-        }, 2000);
-
-        setTimeout(() => {
-          clearInterval(newIntervalId);
-        }, 2000);
-      }, 10000);
-    }, 10000);
-
-    return () => {
-      clearInterval(intervalId);
-      clearInterval(pauseIntervalId);
-    };
+    const userAgent = typeof window !== "undefined" ? window.navigator.userAgent : "";
+    const isMobileDevice = /Mobi|Android/i.test(userAgent);
+    setIsMobile(isMobileDevice);
+    console.log('what am I?', isMobileDevice);
   }, []);
+
+
+  if (isMobile) {
+    return (
+      <div className="hero-section-mobile">
+        {/* <div className="mobile-background">
+          <Image
+            src={Foto}
+            alt="foto"
+            layout="fill"
+            objectFit="cover"
+            className="mobile-background-image"
+          />
+        </div>
+        <div className="mobile-title">
+          <h1>Kristijan Federer</h1>
+        </div> */}
+        <MobileHeroSection title={title} subtitle={subtitle} image={image} />
+      </div>
+    );
+  }
+
 
   const renderHeaderName = () => {
     const name1 = "Kristijan Fe";
