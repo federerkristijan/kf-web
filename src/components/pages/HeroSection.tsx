@@ -8,41 +8,13 @@ import Moustache from "@/assets/moustache.png";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { useMoustacheRotation } from "@/utils/moustache";
-import { MobileHeroSection } from "./MobileHeroSection";
 
 export const HeroSection = ({ title, subtitle, image }: HeroSectionPayload) => {
-  const [isMobile, setIsMobile] = useState(false);
-  const rotation = useMoustacheRotation();
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    const userAgent = typeof window !== "undefined" ? window.navigator.userAgent : "";
-    const isMobileDevice = /Mobi|Android/i.test(userAgent);
-    setIsMobile(isMobileDevice);
-    console.log('what am I?', isMobileDevice);
+    setIsClient(true);
   }, []);
-
-
-  if (isMobile) {
-    return (
-      <div className="hero-section-mobile">
-        {/* <div className="mobile-background">
-          <Image
-            src={Foto}
-            alt="foto"
-            layout="fill"
-            objectFit="cover"
-            className="mobile-background-image"
-          />
-        </div>
-        <div className="mobile-title">
-          <h1>Kristijan Federer</h1>
-        </div> */}
-        <MobileHeroSection title={title} subtitle={subtitle} image={image} />
-      </div>
-    );
-  }
-
 
   const renderHeaderName = () => {
     const name1 = "Kristijan Fe";
@@ -50,69 +22,56 @@ export const HeroSection = ({ title, subtitle, image }: HeroSectionPayload) => {
     const name3 = "erer";
 
     return (
-      <div className="hero-section flex items-start">
-        <h1 className="inline-flex">
-          {name1}
-          <div className="flex ">
-            <motion.div
-              className="absolute top-0 left-0 w-full h-full flex items-center justify-center pointer-events-none"
-              animate={{ y: [-10, 0, -10] }}
-              transition={{
-                duration: 2,
-                ease: "easeInOut",
-                repeat: Infinity,
-              }}
-            >
-              <Image
-                src={Moustache}
-                alt="Moustache Animation"
-                className="moustache-animation"
-                width={55}
-                height={24}
-              />
-            </motion.div>
-            <span className="relative z-10">{name2}</span>
-          </div>
-          {name3}
-        </h1>
+      <div className="relative inline-flex items-center">
+        <span className="text-5xl sm:text-6xl md:text-7xl font-bold">{name1}</span>
+        <div className="relative inline-block">
+          <motion.div
+            className="absolute -top-6 left-1/2 transform -translate-x-1/2 pointer-events-none"
+            animate={{ y: [-5, 0, -5] }}
+            transition={{
+              duration: 2,
+              ease: "easeInOut",
+              repeat: Infinity,
+            }}
+          >
+            <Image
+              src={Moustache}
+              alt="Moustache Animation"
+              className="moustache-animation"
+              width={50}
+              height={24}
+            />
+          </motion.div>
+          <span className="relative z-10 text-5xl sm:text-6xl md:text-7xl font-bold">{name2}</span>
+        </div>
+        <span className="text-5xl sm:text-6xl md:text-7xl font-bold">{name3}</span>
       </div>
     );
   };
 
   return (
-    <div className="hero-section min-h-full">
-      <div className="flex flex-col relative">
-        <div className="heading-moustache ">
-          <h1 className="text-9xl py-4 ">{renderHeaderName()}</h1>
-        </div>
-        <div className="pl-[2rem]">
-          <h2 className="text-5xl py-4">{subtitle}</h2>
-          <span className="sub-header text-3xl py-4">
-            I write clean code to create quality applications with intuitive
-            user experience.
-          </span>
-        </div>
-        <div className="buttons">
-          <Button
-            href="/about"
-          >
-            Discover a talent
-          </Button>
-          <Button
-            className="button2"
-            href="/projects"
-          >
-            See projects
+    <div className="hero-section min-h-screen flex flex-col lg:flex-row items-center justify-center px-4 sm:px-8 lg:px-16">
+      <div className="hero-text flex flex-col items-center lg:items-start text-center lg:text-left lg:pl-0 w-full lg:w-1/2">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl py-4">{renderHeaderName()}</h1>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl py-2">{subtitle}</h2>
+        <p className="text-base sm:text-lg md:text-xl py-2 max-w-md">
+          I write clean code to create quality applications with intuitive user experience.
+        </p>
+        <div className="flex flex-col sm:flex-row sm:px-4 gap-4 py-4">
+          <Button href="/about">Discover a Talent</Button>
+          <Button className="button2" href="/projects">
+            See Projects
           </Button>
         </div>
       </div>
-      <div className="foto px-10 py-20">
+      <div className="mt-8 lg:mt-0 lg:ml-8 hidden md:block w-full lg:w-1/2">
         <Image
           src={Foto}
-          alt="foto"
-          width={550}
+          alt="Kristijan Federer"
+          width={500}
           height={600}
-          className="rounded-xl"
+          className="profile-picture rounded-xl w-80 sm:w-96 md:w-104 lg:w-120"
+          priority
         />
       </div>
     </div>

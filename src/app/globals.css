@@ -498,6 +498,14 @@ button {
 }
 
 @media (max-width: 768px) {
+  .hero-text {
+    padding-left: 1rem!important;
+  }
+
+  .profile-picture {
+    display: none;
+  }
+
   .about-title {
     font-size: 1.5rem;
   }
