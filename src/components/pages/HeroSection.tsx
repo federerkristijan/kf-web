@@ -56,11 +56,11 @@ export const HeroSection = ({ title, subtitle, image }: HeroSectionPayload) => {
           <div className="flex ">
             <motion.div
               className="absolute top-0 left-0 w-full h-full flex items-center justify-center pointer-events-none"
-              animate={{ rotate: [rotation, 0, rotation] }}
+              animate={{ y: [-10, 0, -10] }}
               transition={{
-                from: 60,
-                duration: 0.5,
-                ease: "linear",
+                duration: 2,
+                ease: "easeInOut",
+                repeat: Infinity,
               }}
             >
               <Image
@@ -71,7 +71,7 @@ export const HeroSection = ({ title, subtitle, image }: HeroSectionPayload) => {
                 height={24}
               />
             </motion.div>
-            {name2}
+            <span className="relative z-10">{name2}</span>
           </div>
           {name3}
         </h1>
