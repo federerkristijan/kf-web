@@ -17,51 +17,58 @@ export const HeroSection = ({ title, subtitle, image }: HeroSectionPayload) => {
   }, []);
 
   const renderHeaderName = () => {
-    const name1 = "Kristijan Fe";
-    const name2 = "d";
-    const name3 = "erer";
+    const name1 = "Kristijan";
+    const name2 = "Fe";
+    const name3 = "d";
+    const name4 = "erer";
 
     return (
-      <div className="relative inline-flex items-center">
+      <div className="relative flex items-center gap-2 sm:flex-row flex-col">
         <span className="text-4xl sm:text-5xl md:text-6xl font-bold">
           {name1}
         </span>
-        <div className="relative inline-block">
-          <motion.div
-            className="moustache-animation absolute -top-6 left-1/2 transform -translate-x-1/2 pointer-events-none z-20"
-            animate={{
-              y: [-5, 0, -5],
-              rotate: [-5, 0, 5, 0, -5],
-            }}
-            transition={{
-              y: {
-                duration: 2,
-                ease: "easeInOut",
-                repeat: Infinity,
-              },
-              rotate: {
-                duration: 3,
-                ease: "easeInOut",
-                repeat: Infinity,
-              },
-            }}
-          >
-            <Image
-              src={Moustache}
-              alt="Moustache Animation"
-              width={150}
-              height={130}
-              className="moustache object-contain"
-              priority
-            />
-          </motion.div>
-          <span className="relative z-10 text-4xl sm:text-5xl md:text-6xl font-bold">
+
+        {/* <div className="moustache-federer-wrapper flex items-center justify-center"> */}
+          <span className="text-4xl sm:text-5xl md:text-6xl font-bold">
             {name2}
           </span>
-        </div>
-        <span className="text-4xl sm:text-5xl md:text-6xl font-bold">
-          {name3}
-        </span>
+          <div className="moustache-d relative flex items-center justify-center">
+            <motion.div
+              className="moustache-animation absolute -top-6 left-0 sm:left-[1.7rem] transform -translate-x-1/2 pointer-events-none z-20"
+              animate={{
+                y: [-5, 0, -5],
+                rotate: [-5, 0, 5, 0, -5],
+              }}
+              transition={{
+                y: {
+                  duration: 2,
+                  ease: "easeInOut",
+                  repeat: Infinity,
+                },
+                rotate: {
+                  duration: 3,
+                  ease: "easeInOut",
+                  repeat: Infinity,
+                },
+              }}
+            >
+              <Image
+                src={Moustache}
+                alt="Moustache Animation"
+                width={150}
+                height={130}
+                className="moustache object-contain sm:w-16 sm:h-10"
+                priority
+              />
+            </motion.div>
+            <span className="relative z-10 text-4xl sm:text-5xl md:text-6xl font-bold">
+              {name3}
+            </span>
+          </div>
+          <span className="text-4xl sm:text-5xl md:text-6xl font-bold">
+            {name4}
+          </span>
+        {/* </div> */}
       </div>
     );
   };

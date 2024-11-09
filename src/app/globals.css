@@ -427,6 +427,21 @@ button {
 
 /* Media Queries */
 @media (min-width: 640px) {
+  /* .moustache-d {
+    display: flex;
+  } */
+
+  .moustache {
+    width: 48px;
+    height: 32px;
+  }
+
+  .moustache-animation {
+    display: flex;
+    top: -1.5rem;
+    left: 10%;
+  }
+
   .about-wrapper {
     padding: 2rem;
   }
