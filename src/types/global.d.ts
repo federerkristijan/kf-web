@@ -75,7 +75,7 @@ export interface Project {
   description: string;
   image: string;
   url: string;
-  icons: IconType[];
+  icons: string[];
 }
 
 export interface ProjectsPageProps {

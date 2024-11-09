@@ -130,12 +130,9 @@ nav {
 /* Hero - start */
 
 .hero-section {
-  display: flex;
-  flex-direction: row;
+  min-height: calc(100vh - 5rem);
   width: 100%;
-  justify-content: space-around;
-  margin-top: 7.9rem;
-  margin-bottom: 8rem;
+  padding: 2rem 1rem;
 }
 
 .hero-section h1 {
@@ -149,17 +146,23 @@ nav {
 }
 
 .moustache {
-  animation: moustache 1s infinite;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 48px;
+  height: 32px;
 }
 
 .moustache-animation {
   position: absolute;
-  top: -5px;
-  left: 50%;
+  top: -12px;
+  left: 20%;
   transform: translateX(-50%);
+  transform-origin: center;
+  will-change: transform;
+  backface-visibility: hidden;
+  width: 48px;
+  height: 32px;
 }
 
 .mobile-hero-section {
@@ -351,7 +354,7 @@ button {
   font-weight: 600;
   font-size: 1rem;
   cursor: pointer;
-  padding: 1rem 2rem;
+  padding: 1rem 1rem;
   border-radius: 58px;
 }
 
@@ -422,14 +425,23 @@ button {
   border-radius: 0.75rem;
 }
 
-.project-image {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-}
-
 /* Media Queries */
 @media (min-width: 640px) {
+  /* .moustache-d {
+    display: flex;
+  } */
+
+  .moustache {
+    width: 48px;
+    height: 32px;
+  }
+
+  .moustache-animation {
+    display: flex;
+    top: -1.5rem;
+    left: 10%;
+  }
+
   .about-wrapper {
     padding: 2rem;
   }
@@ -498,6 +510,20 @@ button {
 }
 
 @media (max-width: 768px) {
+  .hero-text {
+    padding-left: 1rem !important;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .profile-picture {
+    display: none;
+  }
+
   .about-title {
     font-size: 1.5rem;
   }

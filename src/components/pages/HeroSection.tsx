@@ -8,111 +8,95 @@ import Moustache from "@/assets/moustache.png";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { useMoustacheRotation } from "@/utils/moustache";
-import { MobileHeroSection } from "./MobileHeroSection";
 
 export const HeroSection = ({ title, subtitle, image }: HeroSectionPayload) => {
-  const [isMobile, setIsMobile] = useState(false);
-  const rotation = useMoustacheRotation();
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    const userAgent = typeof window !== "undefined" ? window.navigator.userAgent : "";
-    const isMobileDevice = /Mobi|Android/i.test(userAgent);
-    setIsMobile(isMobileDevice);
-    console.log('what am I?', isMobileDevice);
+    setIsClient(true);
   }, []);
 
-
-  if (isMobile) {
-    return (
-      <div className="hero-section-mobile">
-        {/* <div className="mobile-background">
-          <Image
-            src={Foto}
-            alt="foto"
-            layout="fill"
-            objectFit="cover"
-            className="mobile-background-image"
-          />
-        </div>
-        <div className="mobile-title">
-          <h1>Kristijan Federer</h1>
-        </div> */}
-        <MobileHeroSection title={title} subtitle={subtitle} image={image} />
-      </div>
-    );
-  }
-
-
   const renderHeaderName = () => {
-    const name1 = "Kristijan Fe";
-    const name2 = "d";
-    const name3 = "erer";
+    const name1 = "Kristijan";
+    const name2 = "Fe";
+    const name3 = "d";
+    const name4 = "erer";
 
     return (
-      <div className="hero-section flex items-start">
-        <h1 className="inline-flex">
+      <div className="relative flex items-center gap-2 sm:flex-row flex-col">
+        <span className="text-4xl sm:text-5xl md:text-6xl font-bold">
           {name1}
-          <div className="flex ">
+        </span>
+
+        {/* <div className="moustache-federer-wrapper flex items-center justify-center"> */}
+          <span className="text-4xl sm:text-5xl md:text-6xl font-bold">
+            {name2}
+          </span>
+          <div className="moustache-d relative flex items-center justify-center">
             <motion.div
-              className="absolute top-0 left-0 w-full h-full flex items-center justify-center pointer-events-none"
-              animate={{ rotate: [rotation, 0, rotation] }}
+              className="moustache-animation absolute -top-6 left-0 sm:left-[1.7rem] transform -translate-x-1/2 pointer-events-none z-20"
+              animate={{
+                y: [-5, 0, -5],
+                rotate: [-5, 0, 5, 0, -5],
+              }}
               transition={{
-                from: 60,
-                duration: 0.5,
-                ease: "linear",
+                y: {
+                  duration: 2,
+                  ease: "easeInOut",
+                  repeat: Infinity,
+                },
+                rotate: {
+                  duration: 3,
+                  ease: "easeInOut",
+                  repeat: Infinity,
+                },
               }}
             >
               <Image
                 src={Moustache}
                 alt="Moustache Animation"
-                className="moustache-animation"
-                width={55}
-                height={24}
+                width={150}
+                height={130}
+                className="moustache object-contain sm:w-16 sm:h-10"
+                priority
               />
             </motion.div>
-            {name2}
+            <span className="relative z-10 text-4xl sm:text-5xl md:text-6xl font-bold">
+              {name3}
+            </span>
           </div>
-          {name3}
-        </h1>
+          <span className="text-4xl sm:text-5xl md:text-6xl font-bold">
+            {name4}
+          </span>
+        {/* </div> */}
       </div>
     );
   };
 
   return (
-    <div className="hero-section min-h-full">
-      <div className="flex flex-col relative">
-        <div className="heading-moustache ">
-          <h1 className="text-9xl py-4 ">{renderHeaderName()}</h1>
-        </div>
-        <div className="pl-[2rem]">
-          <h2 className="text-5xl py-4">{subtitle}</h2>
-          <span className="sub-header text-3xl py-4">
-            I write clean code to create quality applications with intuitive
-            user experience.
-          </span>
-        </div>
-        <div className="buttons">
-          <Button
-            href="/about"
-          >
-            Discover a talent
-          </Button>
-          <Button
-            className="button2"
-            href="/projects"
-          >
-            See projects
+    <div className="min-h-[calc(100vh-5rem)] flex flex-col lg:flex-row items-center justify-center px-4 sm:px-8 lg:px-16 py-8 lg:py-0">
+      <div className="flex flex-col items-center lg:items-start text-center lg:text-left w-full lg:w-1/2 space-y-4">
+        <h1 className="w-full">{renderHeaderName()}</h1>
+        <h2 className="text-xl sm:text-2xl md:text-3xl">{subtitle}</h2>
+        <p className="text-base sm:text-lg md:text-xl max-w-md">
+          I write clean code to create quality applications with intuitive user
+          experience.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4 mt-6">
+          <Button href="/about">Discover a Talent</Button>
+          <Button className="button2" href="/projects">
+            See Projects
           </Button>
         </div>
       </div>
-      <div className="foto px-10 py-20">
+      <div className="mt-8 lg:mt-0 lg:ml-8 hidden md:block w-full lg:w-1/2">
         <Image
           src={Foto}
-          alt="foto"
-          width={550}
+          alt="Kristijan Federer"
+          width={500}
           height={600}
-          className="rounded-xl"
+          className="rounded-xl w-80 sm:w-96 md:w-104 lg:w-120 mx-auto"
+          priority
         />
       </div>
     </div>
