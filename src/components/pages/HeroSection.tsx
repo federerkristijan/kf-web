@@ -57,7 +57,7 @@ export const HeroSection = ({ title, subtitle, image }: HeroSectionPayload) => {
         <p className="text-base sm:text-lg md:text-xl py-2 max-w-md">
           I write clean code to create quality applications with intuitive user experience.
         </p>
-        <div className="flex flex-col sm:flex-row sm:px-4 gap-4 py-4">
+        <div className="buttons flex flex-col sm:flex-row sm:px-4 gap-4 py-3">
           <Button href="/about">Discover a Talent</Button>
           <Button className="button2" href="/projects">
             See Projects
