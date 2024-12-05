@@ -155,8 +155,8 @@ nav {
 
 .moustache-animation {
   position: absolute;
-  top: -12px;
-  left: 20%;
+  top: -20px;
+  left: 15%;
   transform: translateX(-50%);
   transform-origin: center;
   will-change: transform;
@@ -426,7 +426,7 @@ button {
 }
 
 /* Media Queries */
-@media (min-width: 640px) {
+@media (max-width: 640px) {
   /* .moustache-d {
     display: flex;
   } */
@@ -437,7 +437,7 @@ button {
   }
 
   .moustache-animation {
-    display: flex;
+    display: none;
     top: -1.5rem;
     left: 10%;
   }
