@@ -28,13 +28,13 @@ export const HeroSection = ({ title, subtitle, image }: HeroSectionPayload) => {
           {name1}
         </span>
 
-        {/* <div className="moustache-federer-wrapper flex items-center justify-center"> */}
+        <div className="moustache-federer-wrapper flex items-center justify-center">
           <span className="text-4xl sm:text-5xl md:text-6xl font-bold">
             {name2}
           </span>
           <div className="moustache-d relative flex items-center justify-center">
             <motion.div
-              className="moustache-animation absolute -top-6 left-0 sm:left-[1.7rem] transform -translate-x-1/2 pointer-events-none z-20"
+              className="moustache-animation absolute -top-30 transform -translate-x-1/2 pointer-events-none z-20"
               animate={{
                 y: [-5, 0, -5],
                 rotate: [-5, 0, 5, 0, -5],
@@ -68,7 +68,7 @@ export const HeroSection = ({ title, subtitle, image }: HeroSectionPayload) => {
           <span className="text-4xl sm:text-5xl md:text-6xl font-bold">
             {name4}
           </span>
-        {/* </div> */}
+        </div>
       </div>
     );
   };
